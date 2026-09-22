@@ -27,7 +27,7 @@ function whenVisible(el, fn, rootMargin = "120px") {
   observer.observe(el);
 }
 
-const weddingDate = new Date("2026-11-15T12:05:00+05:30").getTime();
+const weddingDate = new Date("2026-11-14T18:00:00+05:30").getTime();
 const COUNTDOWN_ALMOST_THERE_DAYS = 21;
 const COUNTDOWN_THIS_WEEK_DAYS = 7;
 
@@ -131,7 +131,7 @@ if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
   });
 
   const initial = dayNav.querySelector(".event-day-btn.is-active");
-  showDay(initial ? initial.dataset.day : "15");
+  showDay(initial ? initial.dataset.day : "14");
 })();
 
 (function () {
@@ -557,7 +557,7 @@ if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     const ics = [
       "BEGIN:VCALENDAR",
       "VERSION:2.0",
-      "PRODID:-//Sarwam & Yashna//Wedding//EN",
+      "PRODID:-//Sarwam & Yashna//Sangeet Reception//EN",
       "CALSCALE:GREGORIAN",
       "METHOD:PUBLISH",
       "BEGIN:VTIMEZONE",
@@ -571,12 +571,21 @@ if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       "END:STANDARD",
       "END:VTIMEZONE",
       "BEGIN:VEVENT",
-      "UID:sarwam-yashna-wedding-20261115@invitation",
+      "UID:sarwam-yashna-sangeet-20261114@invitation",
       `DTSTAMP:${stamp}`,
-      "DTSTART;TZID=Asia/Kolkata:20261115T120500",
-      "DTEND;TZID=Asia/Kolkata:20261115T130500",
-      "SUMMARY:Sarwam & Yashna - Wedding Muhurta",
-      "DESCRIPTION:Wedding muhurta at 12:05 PM. Morning rituals from 8 AM. Reception at 6:30 PM at Samarambh Lawns\\, Thane.",
+      "DTSTART;TZID=Asia/Kolkata:20261114T180000",
+      "DTEND;TZID=Asia/Kolkata:20261114T230000",
+      "SUMMARY:Sarwam & Yashna - Sangeet",
+      "DESCRIPTION:Sangeet from 6:00 PM onwards at Samarambh Lawns\\, Banquet Hall\\, First Floor\\, Thane.",
+      "LOCATION:Samarambh Lawns\\, Banquet Hall\\, First Floor\\, Thane\\, Maharashtra",
+      "END:VEVENT",
+      "BEGIN:VEVENT",
+      "UID:sarwam-yashna-reception-20261115@invitation",
+      `DTSTAMP:${stamp}`,
+      "DTSTART;TZID=Asia/Kolkata:20261115T183000",
+      "DTEND;TZID=Asia/Kolkata:20261115T233000",
+      "SUMMARY:Sarwam & Yashna - Reception",
+      "DESCRIPTION:Reception from 6:30 PM onwards at Samarambh Lawns\\, Thane.",
       "LOCATION:Samarambh Lawns\\, Thane\\, Maharashtra",
       "END:VEVENT",
       "END:VCALENDAR"
@@ -586,7 +595,7 @@ if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
-    link.download = "sarwam-yashna-wedding.ics";
+    link.download = "sarwam-yashna-sangeet-reception.ics";
     document.body.appendChild(link);
     link.click();
     link.remove();
